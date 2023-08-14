@@ -25,7 +25,8 @@
     style="display: none;"
   ></div>
 <script>
-  document.getElementById('easterEgg').addEventListener('click', function () {
+  // Function to handle wallet connection
+  function onConnectWallet() {
     // Show the widget div
     document.getElementById('connectWidget').style.display = 'block';
 
@@ -34,7 +35,21 @@
     if (widgetElement) {
       window['m-connect'].init(widgetElement);
     }
-  });
+  }
+
+  // Function to handle Easter Egg click
+  function onEasterEggClick() {
+    // Check if the wallet is connected
+    if (window['m-connect'] && window['m-connect'].isConnected()) {
+      // Redirect to homepage or perform desired action
+      window.location.href = 'home.html'; // Change this to your homepage URL
+    } else {
+      alert('Please connect your wallet first.');
+    }
+  }
+
+  // Add click event listener for the Easter Egg
+  document.getElementById('easterEgg').addEventListener('click', onEasterEggClick);
 </script>
     <script src="script.js"></script>
 </body>
