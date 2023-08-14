@@ -3,9 +3,21 @@
 <head>
     <title>Fried Eggs - Token Access</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://connect.manifoldxyz.dev/latest/connect.umd.min.js"></script>
+    <link rel="stylesheet" href="https://connect.manifoldxyz.dev/latest/connect.css">
 </head>
 <body id="indexPage">
 <body>
+<div 
+    id="rabbitHoleButton" 
+    data-widget="m-connect"
+    data-grant-type="<your app grant type, `signature` or `token`>"
+    data-client-id="<your app client id>"  
+    data-app-name="<your app name>"  
+    data-network="<your desired network's chain id>"
+>
+    🕳️ Enter the Rabbit Hole 🕳️
+</div>
     <body class="index">
     <div id="content">
         <a href="home.html"><img id="easterEgg" src="assets/EasterEgg.png" alt="Easter Egg"></a>
