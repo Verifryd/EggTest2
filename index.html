@@ -24,11 +24,18 @@
     data-network="1"
     style="display: none;"
   ></div>
-  <script>
-    document.getElementById('easterEgg').addEventListener('click', function () {
-      document.getElementById('connectWidget').style.display = 'block';
-    });
-  </script>
+<script>
+  document.getElementById('easterEgg').addEventListener('click', function () {
+    // Show the widget div
+    document.getElementById('connectWidget').style.display = 'block';
+
+    // Manually initialize the widget
+    const widgetElement = document.querySelector('[data-widget="m-connect"]');
+    if (widgetElement) {
+      window['m-connect'].init(widgetElement);
+    }
+  });
+</script>
     <script src="script.js"></script>
 </body>
 </html>
