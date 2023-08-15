@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- ... rest of the head ... -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fried Eggs - Token Access</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://connect.manifoldxyz.dev/latest/connect.umd.min.js"></script>
+    <link rel="stylesheet" href="https://connect.manifoldxyz.dev/latest/connect.css">
+    <link rel="stylesheet" href="https://connect.manifoldxyz.dev/3.1.0/connect.manifold-light.css" />
 </head>
 <body id="indexPage" class="index">
     <div id="content">
-        <img id="easterEgg" src="assets/EasterEgg.png" alt="Easter Egg" onclick="onEasterEggClick();">
+        <img id="easterEgg" src="assets/EasterEgg.png" alt="Easter Egg" onclick="onEasterEggClick(event);">
         <div 
             id="rabbitHoleButton" 
             data-widget="m-connect"
@@ -13,12 +20,22 @@
             data-client-id="d59e0e3a39c08033a9d8d5278002a9871291a2a6b420e917809609014b7c6f4f"  
             data-app-name="Fried Eggs"  
             data-network="1"
+            style="display: none;"
         ></div>
     </div>
     <script>
-        function onEasterEggClick() {
-            // Simulate a click on the connect widget
-            document.getElementById('rabbitHoleButton').click();
+        function onEasterEggClick(event) {
+            // Prevent default behavior of the click event
+            event.preventDefault();
+
+            // Show the widget div
+            document.getElementById('rabbitHoleButton').style.display = 'block';
+
+            // Manually initialize the widget
+            const widgetElement = document.querySelector('[data-widget="m-connect"]');
+            if (widgetElement) {
+                window['m-connect'].init(widgetElement);
+            }
         }
     </script>
     <script src="script.js"></script>
