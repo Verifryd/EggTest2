@@ -1,3 +1,12 @@
+// Get the widget element
+const widgetElement = document.getElementById('rabbitHoleButton');
+
+// Add an event listener for the hypothetical "walletConnected" event
+widgetElement.addEventListener('walletConnected', function() {
+  // Redirect to the home page
+  window.location.href = 'home.html';
+});
+
 window.onload = function() {
 // Variables for Fabergé Egg
 var fabergeButton = document.getElementById('purchaseButton');
