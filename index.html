@@ -10,32 +10,31 @@
     <link rel="stylesheet" href="https://connect.manifoldxyz.dev/latest/connect.css">
     <link rel="stylesheet" href="https://connect.manifoldxyz.dev/3.1.0/connect.manifold-light.css" />
 </head>
-<body id="indexPage">
-<body>
-    <body class="index">
+<body id="indexPage" class="index">
     <div id="content">
-        <a href="home.html"><img id="easterEgg" onclick="onConnectWallet();" src="assets/EasterEgg.png" alt="Easter Egg"></a>
+        <a href="home.html"><img id="easterEgg" onclick="onEasterEggClick();" src="assets/EasterEgg.png" alt="Easter Egg"></a>
         <div 
-    id="rabbitHoleButton" 
-    data-widget="m-connect"
-    data-grant-type="signature"
-    data-client-id="d59e0e3a39c08033a9d8d5278002a9871291a2a6b420e917809609014b7c6f4f"  
-    data-app-name="Fried Eggs"  
-    data-network="1"
-    style="display: none;"
-  ></div>
-<script>
-  document.getElementById('easterEgg').addEventListener('click', function () {
-    // Show the widget div
-    document.getElementById('connectWidget').style.display = 'block';
+            id="rabbitHoleButton" 
+            data-widget="m-connect"
+            data-grant-type="signature"
+            data-client-id="d59e0e3a39c08033a9d8d5278002a9871291a2a6b420e917809609014b7c6f4f"  
+            data-app-name="Fried Eggs"  
+            data-network="1"
+            style="display: none;"
+        ></div>
+    </div>
+    <script>
+        function onEasterEggClick() {
+            // Show the widget div
+            document.getElementById('rabbitHoleButton').style.display = 'block';
 
-    // Manually initialize the widget
-    const widgetElement = document.querySelector('[data-widget="m-connect"]');
-    if (widgetElement) {
-      window['m-connect'].init(widgetElement);
-    }
-  });
-</script>
+            // Manually initialize the widget
+            const widgetElement = document.querySelector('[data-widget="m-connect"]');
+            if (widgetElement) {
+                window['m-connect'].init(widgetElement);
+            }
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
