@@ -12,7 +12,7 @@
 </head>
 <body id="indexPage" class="index">
     <div id="content">
-        <a href="home.html"><img id="easterEgg" onclick="onEasterEggClick();" src="assets/EasterEgg.png" alt="Easter Egg"></a>
+        <img id="easterEgg" src="assets/EasterEgg.png" alt="Easter Egg" onclick="onEasterEggClick(event);">
         <div 
             id="rabbitHoleButton" 
             data-widget="m-connect"
@@ -24,7 +24,10 @@
         ></div>
     </div>
     <script>
-        function onEasterEggClick() {
+        function onEasterEggClick(event) {
+            // Prevent default behavior of the click event
+            event.preventDefault();
+
             // Show the widget div
             document.getElementById('rabbitHoleButton').style.display = 'block';
 
