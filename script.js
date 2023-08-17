@@ -1,8 +1,14 @@
-// Get the widget element
-const widgetElement = document.getElementById('rabbitHoleButton');
-
 document.addEventListener('DOMContentLoaded', function () {
+    // Get the widget element
+    const widgetElement = document.getElementById('rabbitHoleButton');
+
     document.getElementById('easterEgg').addEventListener('click', onEasterEggClick);
+
+    // Add an event listener for the hypothetical "walletConnected" event
+    widgetElement.addEventListener('walletConnected', function() {
+        // Redirect to the home page
+        window.location.href = 'home.html';
+    });
 });
 
 function onEasterEggClick() {
@@ -15,12 +21,6 @@ function onEasterEggClick() {
         window['m-connect'].init(widgetElement);
     }
 }
-
-// Add an event listener for the hypothetical "walletConnected" event
-widgetElement.addEventListener('walletConnected', function() {
-  // Redirect to the home page
-  window.location.href = 'home.html';
-});
 
 window.onload = function() {
 // Variables for Fabergé Egg
