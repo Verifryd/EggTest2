@@ -7,6 +7,17 @@ widgetElement.addEventListener('walletConnected', function() {
   window.location.href = 'home.html';
 });
 
+function onEasterEggClick() {
+  // Show the widget div
+  document.getElementById('connectWidget').style.display = 'block';
+
+  // Manually initialize the widget
+  const widgetElement = document.querySelector('[data-widget="m-connect"]');
+  if (widgetElement) {
+    window['m-connect'].init(widgetElement);
+  }
+}
+
 window.onload = function() {
 // Variables for Fabergé Egg
 var fabergeButton = document.getElementById('purchaseButton');

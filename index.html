@@ -12,32 +12,16 @@
 </head>
 <body id="indexPage" class="index">
     <div id="content">
-        <img id="easterEgg" src="assets/EasterEgg.png" alt="Easter Egg" onclick="onEasterEggClick(event);">
-        <div 
-            id="rabbitHoleButton" 
+        <img id="easterEgg" src="assets/EasterEgg.png" alt="Easter Egg" onclick="onEasterEggClick();">
+        <div id="connectWidget" 
             data-widget="m-connect"
             data-grant-type="signature"
             data-client-id="d59e0e3a39c08033a9d8d5278002a9871291a2a6b420e917809609014b7c6f4f"  
             data-app-name="Fried Eggs"  
             data-network="1"
-            style="display: none;"
-        ></div>
+            style="display: none;">
+        </div>
     </div>
-    <script>
-        function onEasterEggClick(event) {
-            // Prevent default behavior of the click event
-            event.preventDefault();
-
-            // Show the widget div
-            document.getElementById('rabbitHoleButton').style.display = 'block';
-
-            // Manually initialize the widget
-            const widgetElement = document.querySelector('[data-widget="m-connect"]');
-            if (widgetElement) {
-                window['m-connect'].init(widgetElement);
-            }
-        }
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
